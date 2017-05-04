@@ -13,14 +13,14 @@ Nmap
 SSH on port 22.
 HTTP proxy on 3128.
 
-I added the proxy to my firefox proxy settings then loaded up this:
+I added the proxy to my firefox settings then loaded up this:
 
 ![Site screenshot]({{ site.url }}/assets/sickos/sickos11/site.PNG)
 
 Running nikto through proxy:
 ![Nikto screenshot]({{ site.url }}/assets/sickos/sickos11/nikto.PNG)
 
-It finds tons of stuff, including possible shellshock vulnerability.
+It finds tons of stuff, including possible shellshock vulnerability, but lets keep going.
 
 Checking robots reveals wolfcms running on site.
 ![Robots screenshot]({{ site.url }}/assets/sickos/sickos11/robotstxt.PNG)
@@ -28,22 +28,22 @@ Checking robots reveals wolfcms running on site.
 Checking wolfcm and source, then tried /admin/ for login.
 ![Wolf cms screenshot]({{ site.url }}/assets/sickos/sickos11/wolfcms.PNG)
 
-Tried common combinations. admin/admin works.
+Tried common combinations. admin/admin works, no bruteforce needed.
 ![Wolf cms screenshot]({{ site.url }}/assets/sickos/sickos11/wolfcmsadmin.PNG)
 
-I generate a php reverse shell in msfvenom, then upload it using the file upload option within wolfcms. Netcat doesn't seem to work correctly.
+I generate a php reverse shell in msfvenom, then upload it using the file upload option within wolfcms. Netcat doesn't seem to catch the reverse shell correctly however.
 ![reverse shell screenshot]({{ site.url }}/assets/sickos/sickos11/reverseshell.png)
 
-I load up reverse tcp in metasploit instead and reload the page, it connects, I've got a meterpreter shell.
+I load up reverse tcp in metasploit instead and reload the page, it connects, I've got a working meterpreter shell now.
 ![meterpreter screenshot]({{ site.url }}/assets/sickos/sickos11/meterpreter.PNG)
 
 Finding some accounts in /etc/passwd
 ![etcpasswd screenshot]({{ site.url }}/assets/sickos/sickos11/etcpasswd.PNG)
 
-Finding some credentials in config.php
+I search around the box for anything interesting and find some credentials in config.php. I was going to attempt to look for the mysql service but I thought I'd try SSHing with those credentials.
 ![configphp screenshot]({{ site.url }}/assets/sickos/sickos11/configphp.PNG)
 
-Trying some of the accounts from earlier with the password found in configphp. SSHing with sickos account works.
+Trying some of the accounts from earlier with the password found in config.php. SSHing with sickos account works.
 ![SSH screenshot]({{ site.url }}/assets/sickos/sickos11/ssh.PNG)
 
 I sudo su, it works, checking /root/
