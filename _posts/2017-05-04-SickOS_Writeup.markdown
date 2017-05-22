@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SickOS 1.1 writeup"
+title:  "SickOS 1.1 writeup [DONE]"
 date:   2017-05-04 13:33:27 +0100
 categories: jekyll update
 ---

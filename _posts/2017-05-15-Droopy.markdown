@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Droopy 0.2 writeup"
+title:  "Droopy 0.2 writeup [DONE]"
 date:   2017-05-04 13:33:27 +0100
 categories: jekyll update
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Quaoar writeup"
+title:  "Quaoar writeup [DONE]"
 date:   2017-04-12 23:33:27 +0100
 categories: jekyll update
 ---
