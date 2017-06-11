@@ -61,5 +61,5 @@ Checking flag.
 
 All done.
 
-I think there was a metasploit module I could use to root with chkrootkit, but I wanted to avoid it and attempt to do it manually since it seemed easy to do it manually. 
+I think there was a metasploit module I could use to root with chkrootkit, but I wanted to avoid it and attempt to do it manually.
 
