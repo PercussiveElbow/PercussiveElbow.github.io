@@ -85,7 +85,7 @@ An anonymous user can gain remote root access due to a buffer overflow caused
 
 ![Nmap screenshot]({{ site.url }}/assets/kioptrix/1/root.PNG)
 After a little playing around with the payload (I had to set it to the generic shell_reverse_tcp in metasploit becaue I was getting SSL errors when exploiting)
-I get a reverse shell, as root no less. (Ignore the depreceated metasploit script warning).
+I get a reverse shell, as root no less. (Ignore the deprecated metasploit script warning).
 
 **Testing rpc.statd (Port 32768)**
 
