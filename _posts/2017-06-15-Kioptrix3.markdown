@@ -94,7 +94,7 @@ We have credentials to SSH.
 SSHing onto the VM, then searching for ways to root.
 ![Rooting screenshot]({{ site.url }}/assets/kioptrix/3/rooting.PNG)
 
-This ht terminal it tells us to use is running as root, we're able to write to any file. So I add the users to the sudoers file and sudo su to root.
+The checksec.sh file and bash history hint to use sudo ht. The HT terminal is running as root so we're able to write to any file. I add the users to the sudoers file and sudo su to root from loneferret
 ![Rooting screenshot]({{ site.url }}/assets/kioptrix/3/rooting1.PNG)
 ![Sudoht screenshot]({{ site.url }}/assets/kioptrix/3/sudoht.PNG)
 ![Rooted screenshot]({{ site.url }}/assets/kioptrix/3/rooted.PNG)
