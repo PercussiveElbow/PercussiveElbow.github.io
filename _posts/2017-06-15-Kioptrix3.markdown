@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "Kioptrix Level 3 [DONE]"
+date:   2017-06-15 13:33:27 +0100
+categories: jekyll update
+---
+
+[Download this box on VulnHub](https://www.vulnhub.com/entry/kioptrix-level-12-3,24/)
+
+Initial nmap scan:
+![Nmap screenshot]({{ site.url }}/assets/kioptrix/3/nmap.PNG)
+
+Nmap tells us that there's two things we can see running on the box:
+* OpenSSH on port 22
+* Apache on port 80.
+
+**Testing OpenSSH (Port 22)**
+*Version 4.7.p1*
+
+**Testing Apache httpd (Port 80)**
+*Version 2.2.8, PHP Version 5.2.4-2ubuntu5.6 with Suhosin-Patch*
+
+Checking out the site in firefox:
+![Site screenshot]({{ site.url }}/assets/kioptrix/3/site.PNG)
+
+Nothing special in the source code that I can see.
+![Dirb screenshot]({{ site.url }}/assets/kioptrix/3/dirb.PNG)
+
+![Nikto screenshot]({{ site.url }}/assets/kioptrix/3/nikto.PNG)
+
+
+Two methods I found from here to get SSH credentials:
+<br><br>
+
+**LotusCMS method**
+
+![LotusCMS screenshot]({{ site.url }}/assets/kioptrix/3/lotuscms.PNG)
+
+Lotus CMS running on the VM is vulnerable to an exploit.
+
+LotusCMS 3.0 - eval() Remote Command Execution (Metasploit)
+
+![Searchsploit screenshot]({{ site.url }}/assets/kioptrix/3/searchsploit.PNG)
+![LotusCMS screenshot]({{ site.url }}/assets/kioptrix/3/lotuscmsexploit.PNG)
+![LotusCMS screenshot]({{ site.url }}/assets/kioptrix/3/lotuscmsmsf.PNG)
+Got a shell back as user www-data.
+
+My shell was acting a bit wonky but managed to find some php credentials in the gallery folder.
+
+![gconfig screenshot]({{ site.url }}/assets/kioptrix/3/gconfig.PNG)
+
+I wasn't really sure where to use these credentials, but nikto had shown where earlier (/phpmyadmin/).
+Logging on with root credentials..
+![phpmyadmin screenshot]({{ site.url }}/assets/kioptrix/3/phpmyadmin.PNG)
+
+![phpmyadmin screenshot]({{ site.url }}/assets/kioptrix/3/phpmyadmin1.PNG)
+
+Exploring for any tables with possible credentials
+
+![phpmyadmin screenshot]({{ site.url }}/assets/kioptrix/3/phpmyadmin2.PNG)
+
+Finding two users and hashes in dev_accounts table.
+
+![phpmyadmin screenshot]({{ site.url }}/assets/kioptrix/3/phpmyadmin3.PNG)
+
+Now we have (hashed) credentials to SSH.
+
+![Decrypting hash screenshot]({{ site.url }}/assets/kioptrix/3/md5.PNG)
+
+<br><br>
+**SQL Injection method**
+
+I find a gallery page that lets us order by a few different factors, one of these contains an ID in the query (gallery.php?id=1). It looks like it might be vulnerable to SQL injection.	
+![SQLInjection screenshot]({{ site.url }}/assets/kioptrix/3/possiblesql.PNG)
+
+Adding a ' to the request gives us a SQL error message back to the client.
+![SQLInjection screenshot]({{ site.url }}/assets/kioptrix/3/sqlinjection1.PNG)
+
+Running sqlmap on it finds tons of issues.
+![SQLMap screenshot]({{ site.url }}/assets/kioptrix/3/sqlmap.PNG)
+
+And even returns us users and their hashed credentials.
+![SQLMap screenshot]({{ site.url }}/assets/kioptrix/3/sqlmap2.PNG)
+
+It returned two hashed md5 passwords (decrypted within sqlmap here, I did it via hashcat before, though I was having issues getting hashcat to find my gpu when I went to write this up)
+![Decrypting hash screenshot]({{ site.url }}/assets/kioptrix/3/md5.PNG)
+
+
+We have credentials to SSH.
+
+<br><br>
+**Rooting**
+
+SSHing onto the VM, then searching for ways to root.
+![Rooting screenshot]({{ site.url }}/assets/kioptrix/3/rooting.PNG)
+
+This ht terminal it tells us to use is running as root, we're able to write to any file. So I add the users to the sudoers file and sudo su to root.
+![Rooting screenshot]({{ site.url }}/assets/kioptrix/3/rooting1.PNG)
+![Sudoht screenshot]({{ site.url }}/assets/kioptrix/3/sudoht.PNG)
+![Rooted screenshot]({{ site.url }}/assets/kioptrix/3/rooted.PNG)
+![Flag screenshot]({{ site.url }}/assets/kioptrix/3/FLAG.PNG)
+Rooted.
+
+
+
