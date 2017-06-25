@@ -37,10 +37,11 @@ Again think this is vulnerable to rpcbomb, but this doesn't help.
 
 Actual Apache HTTPd client doesn't have any vulnerabilities that will help us exploit.
 
-![apache screenshot]({{ site.url }}/assets/kioptrix/2/admin.PNG)
+[missing screenshot of login]
 
 This login can be bypassed with some SQL Injection by entering: ' or 1=1 #.
 
+![apache screenshot]({{ site.url }}/assets/kioptrix/2/admin.PNG)
 
 I use this to ping localhost, then use pipe or && to run commands.
 ![apache screenshot]({{ site.url }}/assets/kioptrix/2/admin2.PNG)
