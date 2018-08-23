@@ -7,5 +7,3 @@ title: Home
 icon: fa-home
 order: 1
 ---
-
-I can't think of anything to put here. 
