@@ -13,18 +13,34 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Security Stuff
-description: > # this means to ignore newlines until "baseurl:"
-  Just some Vulnhub/CTF writeups from a beginner
+
+title: PercussiveElbow
+subtitle: Security stuff
+description: >- # this means to ignore newlines until "baseurl:"
+  This is the demo site for a Jekyll theme version of
+  HTML5 UP's sleek, responsive site template Prologue.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  PercussiveElbow
+url: "https://PercussiveElbow.github.io" # the base hostname & protocol for your site
+author: PercussiveElbow
+avatar: assets/images/avatar.png
+
+twitter_url:
+facebook_url:
+googleplus_url:
+instagram_url:
+linkedin_url:
+github_url: https://github.com/PercussiveElbow
+pinterest_url:
+slack_url:
+dribbble_url:
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: chrisbobbe/jekyll-theme-prologue
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+
+collections: [sections]
