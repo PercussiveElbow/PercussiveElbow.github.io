@@ -19,10 +19,10 @@ subtitle: Security stuff
 description: >- # this means to ignore newlines until "baseurl:"
   This is the demo site for a Jekyll theme version of
   HTML5 UP's sleek, responsive site template Prologue.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 author: PercussiveElbow
 avatar: assets/images/avatar.png
-baseurl: "/jekyll" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
 
 twitter_url:
 facebook_url:
