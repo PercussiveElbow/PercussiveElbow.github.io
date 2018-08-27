@@ -7,7 +7,7 @@ permalink: /about/
 
 I like <a href="https://letterboxd.com/PercussiveElbow"> bad movies </a> and all things *sec. 
 
-Recently completed my OSCP, you can find me hanging around on various infosec IRC/Discord channels.
+Recently completed my [OSCP]({% post_url 2018-08-27-OSCP %}), you can find me hanging around on various infosec IRC/Discord channels.
 
 I regularly hack away at CTFs, including OverTheWire, VulnHub and
 [HackTheBox](https://www.hackthebox.eu/home/users/profile/55538)
