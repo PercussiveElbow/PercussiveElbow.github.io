@@ -3,6 +3,7 @@ layout: post
 title:  "HTB Poison Walkthrough"
 date:   2018-09-09 12:00:00 +0100
 categories: jekyll update
+permalink: /htb-poison/
 ---
 
 I've just finished [NoxCTF](https://ctf18.noxale.com/) yesterday so I thought I'd try to do a quick writeup of Poison on HackTheBox. This is a pretty easy box, user in particular is straightforward, although PE can trip you up if you overthink it.
