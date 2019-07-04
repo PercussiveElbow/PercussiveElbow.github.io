@@ -1,45 +1,24 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site specific settings
+title: "MiloSec"
+name: "PercussiveElbow"
+keywords: "Key, words, about, this, website"
+baseurl: ""
+url: "http://percussiveelbow.github.io"
+description: "Website description"
+cover: "/assets/img/cover.svg"
+fanpage_id: ""
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Site general settings
+lang: "en"
+lang_alternate: "pt_BR"
+ssl: false # It will redirect to https
 
-title: PercussiveElbow
-subtitle: Security stuff
-description: >- # this means to ignore newlines until "baseurl:"
-  .
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://PercussiveElbow.github.io" # the base hostname & protocol for your site
-author: PercussiveElbow
-avatar: assets/images/avatar.png
-
-twitter_url:
-facebook_url:
-googleplus_url:
-instagram_url:
-linkedin_url:
-github_url: https://github.com/PercussiveElbow
-pinterest_url:
-slack_url:
-dribbble_url:
+disqus: 
+twitter: percussiveelbow
+facebook: 
+github: percussiveelbow
+google:
 
 # Build settings
 markdown: kramdown
-remote_theme: chrisbobbe/jekyll-theme-prologue
-gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
-
-collections: [sections]
+permalink: /:categories/:title/
