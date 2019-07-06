@@ -22,11 +22,14 @@ Big shout out to [LampiaoSec](https://github.com/lampiaosec) for the Jekyll them
 {:id="projects"}
 
 I have a terrible habit of starting projects and not finishing them. I do try to open source these though.
-<ul>
 {% for project in site.categories.projects %}
-<li><a href="{{ project.link }}">{{ project.title }}</a> - {{ project.description }} <i>{{project.description2}}</i> </li>
-{% endfor %}
+<a href="{{ project.link }}">{{ project.title }}</a>
+
+<ul>
+    <li>{{ project.description }} </li>
+    <li><i>{{project.description2}}</i> </li>
 </ul>
+{% endfor %}
 
 # cat tutorials.txt
 {:id="tutorials"}
@@ -50,8 +53,9 @@ I have a terrible habit of starting projects and not finishing them. I do try to
 {% endfor %}
 </ul>
 
-# $ ls -R /ctf_walkthroughs
+# $ ls -R /ctfs
 {:id="walkthroughs"}
+Walkthroughs for CTF challenges I've written up.
 
 <ul>
 {% for walkthrough in site.categories.walkthroughs %}
