@@ -2,25 +2,28 @@
 
 html {
 	background-image: url("../img/background.gif");
+	width: 100%;
 }
 
 body {
 	background-color: rgba(0,0,0,0.97);
 	color: rgba(255,255,255,0.7);
-	padding: 5px;
+	padding: 3px;
 	margin: auto;
-	width: 80%;
+	width: 90%;
 	border: 1px dashed rgba(255,255,255,0.7);
 	font-family: "Open Sans";
+	font-size: 14px;
 }
 
 header, nav, main, footer {
-	margin: 15px;
+	margin: 10px;
 	border-bottom: 1px dashed rgba(255,255,255,0.5);
 }
 
 header, nav {
 	text-align: center;
+	align-self: center;
 }
 
 @font-face {
@@ -28,11 +31,16 @@ header, nav {
 	src: url("/assets/fonts/edunline.ttf");
 }
 
+.logoContainer {
+	width: 50%;
+	margin: 0 auto;
+}
+
 .ascii {
 	color: rgba(255,255,255,1);
 	font-weight: bold;
-	font-size: 72px; 
-    font-size: 8vw;
+    border: 1px solid black;
+	font-size: calc(25px + (45 - 25) * ((100vw - 300px) / (1600 - 300)));
 	font-family: edunline;
 }
 
@@ -47,7 +55,7 @@ nav ul {
 
 nav ul li {
 	display: inline;
-	padding-left: 10px;
+	padding-left: 0px;
 }
 
 nav ul li a {
@@ -98,7 +106,7 @@ img, main iframe {
 
 main header {
 	text-align: center;
-	padding-bottom: 1px;
+	padding-bottom: 0px;
 	border: 0;
 }
 
