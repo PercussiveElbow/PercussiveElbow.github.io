@@ -33,5 +33,3 @@ You can find me hanging around on various infosec IRC/Discord channels.
 {% endfor %}
 </ul>
 
-
-</ul>
