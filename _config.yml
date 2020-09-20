@@ -50,7 +50,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 baseurl: ''
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Europe/London
 
 google_analytics:
   id: ''          # Fill with your Google Analytics ID
@@ -123,19 +123,19 @@ defaults:
       path: _drafts
     values:
       comments: false
-  # -
-  #   scope:
-  #     path: tags
-  #   values:
-  #     tab_active: Tags
-  #     location: Tag
-  #     breadcrumb:
-  #       -
-  #         label: Home
-  #         url: /
-  #       -
-  #         label: Tags
-  #         url: /tabs/tags/
+  -
+    scope:
+      path: tags
+    values:
+      tab_active: Tags
+      location: Tag
+      breadcrumb:
+        -
+          label: Home
+          url: /
+        -
+          label: Tags
+          url: /tabs/tags/
   -
     scope:
       path: categories
