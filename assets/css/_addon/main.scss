@@ -1381,7 +1381,9 @@ div.post-content .table-wrapper {
       align-content: center!important;
       >div {
         text-align: left !important;
-        width: 100%;
+        // width: 100%;
+        margin:auto !important;
+
       }
     }
   }

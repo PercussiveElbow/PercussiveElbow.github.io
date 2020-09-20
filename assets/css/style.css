@@ -7,21 +7,19 @@
 }
 
 .logoContainer {
-	width: 100%;
-	margin: 0 auto;
+	display:block;
+	margin:auto;
 }
 
 .ascii {
-	color: rgba(255,255,255,1);
+	color: rgba(255,255,255,1) !important;
 	font-weight: bold;
     border: 0px solid black;
-	font-size: calc(25px + (45 - 25) * ((100vw - 300px) / (1600 - 300)));
+	/* font-size: calc(25px + (45 - 25) * ((100vw - 300px) / (1600 - 300))); */
+	font-size: 1.5vw;
 	font-family: edunline;
 }
 
-.logo {
-	font: 10px/5px monospace;
-}
 
 #blinky{
 	animation: blink 3s linear infinite;
@@ -30,4 +28,9 @@
 0%{opacity: 0;}
 50%{opacity: .5;}
 100%{opacity: 1;}
+}
+
+#avatar  {
+	display:block;
+    margin:auto;
 }
