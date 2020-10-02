@@ -8,7 +8,7 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Mil0Sec                          # the main title
+title: Mil0                          # the main title
 
 tagline: I like bad movies and all things *sec. Security consultant.  # it will display as the sub-title
 
@@ -19,7 +19,7 @@ description: >-                        # used by seo meta and the atom feed
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://mil0.io'
 
-author: Mil0Sec                  # change to your full name
+author: Mil0                  # change to your full name
 
 avatar: /assets/images/avatar.png   # support internet resources
 
